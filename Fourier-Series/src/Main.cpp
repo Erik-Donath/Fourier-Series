@@ -68,7 +68,7 @@ int main(i32 argc, char* argv[]) {
 		BeginDrawing();
 		ClearBackground({ 35, 35, 35, 255 });
 
-		DrawSeries({ Width / 3.0f, Height / 3.0f }, 128, 0.5f); // speed = 0.4462278f
+		DrawSeries({ Width / 3.0f, Height / 3.0f }, 50, 8.0f); // speed = 0.4462278f
 		
 		i32 height = Height / 2 + Height / 10;
 		DrawRectangle(0, height, Width, Height - height, { 30, 30, 30, 255 });
