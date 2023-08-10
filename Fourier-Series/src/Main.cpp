@@ -1,6 +1,12 @@
 #include <stdio.h>
+#include "raylib.h"
 
 int main(int argc, char* argv[]) {
-	printf("[Info] Arguments(%i):\n", argc);
-	for (int i = 0; i < argc; i++) printf(" - %i: %s\n", i, argv[i]);
+	InitWindow(800, 600, "Fourier Series");
+	while (!WindowShouldClose()) {
+		BeginDrawing();
+		ClearBackground({ 45, 45, 45, 255 });
+		EndDrawing();
+	}
+	CloseWindow();
 }
