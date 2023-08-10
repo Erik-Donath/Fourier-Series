@@ -1,0 +1,8 @@
+.vs/
+Fourier-Series/Fourier-Series.vcxproj.filters
+Fourier-Series/Fourier-Series.vcxproj.user
+
+Build/Debug Win32/intermediates/
+Build/Debug x64/intermediates/
+Build/Release Win32/intermediates/
+Build/Release x64/intermediates/
