@@ -66,7 +66,8 @@ void DrawGui(float height) {
 	DrawRectangle(0, height, Width, Height - height, { 20, 20, 20, 255 });
 	GuiSliderBar({ 50, height + 20, 200, 20 }, "Speed", TextFormat("%0.2f", g_Speed), &g_Speed, 0.01f, 50.0f);
 	GuiSliderBar({ 50, height + 50, 200, 20 }, "N", TextFormat("%0.0f", g_N), &g_N, 0.0f, 100.0f);
-	DrawText(TextFormat("%0.3fsec", nextPush - GetTime()), 285+240, height + 30, 30, GRAY);
+	DrawText(TextFormat("%0.3fsec", nextPush - GetTime()), 285+240, height + 40, 30, GRAY);
+	DrawFPS(285+240, height + 20);
 	if (GuiButton({ 285+0, height + 20, 50,  50 }, "Reset")) {
 		g_N = 10.0f;
 		g_Speed = 5.0f;
@@ -85,6 +86,7 @@ void DrawGui(float height) {
 	if (GuiButton({ 285+180, height + 20, 50,  50 }, "Push")) {
 		nextPush = -666.0f;
 	}
+	g_N = floorf(g_N);
 }
 
 int main(i32 argc, char* argv[]) {
@@ -98,10 +100,9 @@ int main(i32 argc, char* argv[]) {
 		BeginDrawing();
 		ClearBackground({ 30, 30, 30, 255 });
 
-		DrawSeries({ 300, 250 }, 600, floor(g_N), g_Speed); // speed = 0.4462278f
+		DrawSeries({ 300, 250 }, 600, roundf(g_N), g_Speed); // speed = 0.4462278f
 		DrawGui(515);
 
-		DrawFPS(5, 5);
 		EndDrawing();
 	}
 	CloseWindow();
